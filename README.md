@@ -1,7 +1,7 @@
-# DiscordBotPlugin — 使い方
+# DiscordEmbedSenderPlugin — 使い方
 
 このプラグインは、Minecraft（Paper 1.21.11）サーバーから Discord に「埋め込みメッセージ（Embed）」を送信するためのものです。  
-送信内容はサーバー側の JSON ファイル（plugins/DiscordBotPlugin/functions/*.json）で作成・管理でき、サーバー内のコマンド、コマンドブロック、またはデータパックの function から送信できます。
+送信内容はサーバー側の JSON ファイル（plugins/DiscordEmbedSenderPlugin/functions/*.json）で作成・管理でき、サーバー内のコマンド、コマンドブロック、またはデータパックの function から送信できます。
 
 前提：
 - Paper 1.21.11 を使ったサーバー
@@ -31,11 +31,11 @@
     - 生成された URL で Bot を招待
 
 プラグインの導入（サーバー側）
-1. プラグインの jar（例：discordbotplugin-x.x.jar）を Paper サーバーの `plugins/` フォルダに入れます。
-2. サーバーを起動（または再起動）します。初回起動でプラグインのフォルダ `plugins/DiscordBotPlugin` と `config.yml` が自動生成されます。
+1. プラグインの jar（例：discordembedsenderplugin-x.x.jar）を Paper サーバーの `plugins/` フォルダに入れます。
+2. サーバーを起動（または再起動）します。初回起動でプラグインのフォルダ `plugins/DiscordEmbedSenderPlugin` と `config.yml` が自動生成されます。
 
 config.yml（設定ファイル）
-- 生成された `plugins/DiscordBotPlugin/config.yml` をテキストエディタで開きます。
+- 生成された `plugins/DiscordEmbedSenderPlugin/config.yml` をテキストエディタで開きます。
 - 必須項目は `token`（Bot トークン）と `channel`（送信先チャンネルID）です。
 - `periodic:enabled`はデフォルトで`false`ですが、サーバーの情報をDiscordに定期送信する場合は`true`にします。
 
@@ -58,11 +58,11 @@ periodic:
 2. 送信先チャンネルを右クリック → 「ID をコピー」
 
 functions フォルダと JSON（送信テンプレート）
-- `plugins/DiscordBotPlugin/functions` フォルダを作成します（なければプラグインが自動で作るか、自分で作成）。
+- `plugins/DiscordEmbedSenderPlugin/functions` フォルダを作成します（なければプラグインが自動で作るか、自分で作成）。
 - ここに `<name>.json`（拡張子 .json、例: `status.json`）を置きます。
 - JSON の中で送信先チャンネルや埋め込み（タイトル・本文・フィールド等）を定義します。
 
-例：plugins/DiscordBotPlugin/functions/status.json
+例：plugins/DiscordEmbedSenderPlugin/functions/example.json
 ```json
 {
   "channel": 123456789012345678,
@@ -89,7 +89,7 @@ functions フォルダと JSON（送信テンプレート）
     - 例: /senddiscordembed status
 
 - コマンドブロックから
-    - コマンドブロックに `senddiscordembed status` と入力して実行（コマンドブロックからの実行は許可されています）。
+    - コマンドブロックに `senddiscordembed status` と入力して実行。
 
 - データパック（function）から
     - データパックの .mcfunction ファイル内に以下を記述：
@@ -140,7 +140,7 @@ functions フォルダと JSON（送信テンプレート）
 質問・トラブル報告方法
 問題が直らない場合、以下を教えてください：
 1. `server.log` の該当エラーメッセージ（コピー）
-2. `plugins/DiscordBotPlugin/config.yml`（token は伏せてください）
+2. `plugins/DiscordEmbedSenderPlugin/config.yml`（token は伏せてください）
 3. 該当する functions の JSON（ファイル名と中身）
    これらがあれば、原因の調査と具体的な修正方法を提示できます。
 
