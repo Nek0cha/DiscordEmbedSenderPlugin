@@ -1,0 +1,16 @@
+name: DiscordEmbedSenderPlugin
+version: '1.0'
+main: io.github.nek0cha.discordembedsenderplugin.DiscordEmbedSenderPlugin
+api-version: '1.21'
+load: STARTUP
+authors: [Nyaffle]
+description: Minecraft サーバーから埋め込みをを Discord に送信するプラグイン
+commands:
+  senddiscordembed:
+    description: plugins/DiscordBotPlugin/functions の JSON から Discord に埋め込みを送信します。
+    usage: /senddiscordembed <jsonName>
+    permission: discordbot.sendembed
+permissions:
+  discordbot.sendembed:
+    description: プレイヤーが/senddiscordembedを実行できるようにします。
+    default: op

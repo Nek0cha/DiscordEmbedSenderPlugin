@@ -1,0 +1,11 @@
+# Discord Bot の設定
+token: "ここにBotのトークンを入れてください（絶対に公開しないこと）"
+# 送信先チャンネル ID（数値）: Discord 上で対象チャンネルを右クリック → コピーID
+channel: 123456789012345678
+
+# 定期送信機能の設定
+periodic:
+  # 定期送信を有効にするか（デフォルト: false）
+  enabled: false
+  # 送信間隔（秒）
+  intervalSeconds: 300

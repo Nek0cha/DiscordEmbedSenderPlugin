@@ -1,0 +1,12 @@
+{
+  "channel": 123456789012345678,
+  "title": "サーバーステータス",
+  "description": "現在のサーバー情報を手動送信します。",
+  "color": "#00ff00",
+  "timestamp": true,
+  "fields": [
+    { "name": "オンライン", "value": "3/50", "inline": true },
+    { "name": "プレイヤー", "value": "player1, player2, player3", "inline": false }
+  ],
+  "footer": { "text": "Minecraft Server", "icon_url": null }
+}
