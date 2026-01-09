@@ -7,7 +7,7 @@ authors: [Nyaffle]
 description: Minecraft サーバーから埋め込みをを Discord に送信するプラグイン
 commands:
   senddiscordembed:
-    description: plugins/DiscordBotPlugin/functions の JSON から Discord に埋め込みを送信します。
+    description: plugins/DiscordEmbedSenderPlugin/functions の JSON から Discord に埋め込みを送信します。
     usage: /senddiscordembed <jsonName>
     permission: discordbot.sendembed
 permissions:
